@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const adminPort = 62102;
 
-app.get('*',function(req, res) {
+app.get('*', function(req, res) {
 		const fullurl = req.hostname + req.originalUrl;
 		console.log(fullurl);
 
@@ -10,6 +11,6 @@ app.get('*',function(req, res) {
 });
 app.use(express.static(path.join(__dirname)));
 
-app.listen(8080, () => {
-  console.log('listening 3000');
+app.listen(adminPort, () => {
+  console.log(`listening on ${adminPort}`);
 });
