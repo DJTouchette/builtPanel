@@ -7,7 +7,7 @@ const adminPort = 62102;
 
 app.use(express.static(__dirname));
 
-app.get('/admin/',function(req, res) {
+app.get('*',function(req, res) {
 		const fullurl = req.hostname + req.originalUrl;
 		console.log(fullurl);
 
